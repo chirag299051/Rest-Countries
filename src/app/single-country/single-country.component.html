@@ -1,0 +1,40 @@
+<div container style="text-align:center">
+  <div class="container-fluid">
+  <div row *ngIf="currentCountry">
+    <div class="col-md-12 justify-content-center"><br><br>
+      <img src= {{currentCountry[0].flag}}><br><br>
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{{currentCountry[0].name | uppercase}}</h4><hr><br>
+          <p class="card-text text-left">
+              Calling Codes : <span *ngFor="let cc of currentCountry[0].callingCodes;let first=first;let last=last">{{cc}}{{last ? '' : ', '}}</span><br>
+              Capital : {{currentCountry[0].capital}}<br>
+              Region : {{currentCountry[0].region}}<br>
+              Subregion : {{currentCountry[0].subregion}}<br>
+              Population : {{currentCountry[0].population}}<br>
+              Timezones : <span *ngFor="let tz of currentCountry[0].timezones;let first=first;let last=last">{{tz}}{{last ? '' : ', '}}</span><br>
+              Borders : <span *ngFor="let border of currentCountry[0].borders;let first=first;let last=last">{{border}}{{last ? '' : ', '}}</span><br>
+              Currency : {{currentCountry[0].currencies[0].name}}<br>
+              Languages : {{currentCountry[0].languages[0].name}}<br>
+              Regional Blocs : {{currentCountry[0].regionalBlocs[0].name}}<br>
+          </p><br><br><hr>
+          <a (click)="goBackToPreviousPage()"><button type="button">Go Back</button></a><br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="footer">
+    <div class="about"><br><br>
+      <button>
+        <h1>About</h1>
+      </button>
+    </div>
+    <br><br>
+    <p>Get information about countries via a RESTful API</p>
+    <br><br>
+    <p class="end">Copyright © 2018 - Chirag Gahlawat</p><br><br>
+</div>
+
